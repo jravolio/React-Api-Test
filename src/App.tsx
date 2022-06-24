@@ -5,12 +5,18 @@ import { api } from './services/api';
 
 export function App() {
 
-const [user,setUser] = useState([])
+  interface UserProps {
+    name: string;
+    image: string;
+    id: number;
+  }
+
+const [character, setCharacter] = useState<UserProps[]>([]);
 
 useEffect(() => {
   api
-    .get("/users/jravolio")
-    .then((response) => setUser(response.data))
+    .get("/character")
+    .then((response) => setCharacter([response.data.results]))
     .catch((err) => {
       console.error("ops! ocorreu um erro" + err);
     });
@@ -20,8 +26,8 @@ useEffect(() => {
     <>
       <GlobalStyle/>
       <div className="App">
-        {user.map(user =>(
-          <Home name= {user.name}/>
+        {character.map((char,index) =>(
+          <Home key= {index} name= {char.name} imageUrl = {char.image}/>
         ))}
       </div>
     </>
