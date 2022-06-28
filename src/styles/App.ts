@@ -10,7 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     .App{
         position: absolute;
         width: 100%;
-        background: rgb(131,58,180);
-        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
     }
 `
