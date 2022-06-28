@@ -2,6 +2,7 @@ import { Container } from "./styles"
 import { useEffect, useState } from "react";
 import { api } from '../../services/api'
 
+<<<<<<< HEAD
 interface UserProps{
     name: string;
     id: number;
@@ -42,6 +43,22 @@ useEffect(() => {
                 })}
                 </ul>
             <button>Next Page</button>
+=======
+type Home = {
+    name: string,
+    imageUrl: string,
+}
+
+export function Home({ name, imageUrl }: Home){
+    console.log(imageUrl)
+    console.log(name)
+    return(
+        <Container>
+            <div className='card'>
+                <h1>{name}</h1>
+                <img src={imageUrl} alt={name} />
+            </div>
+>>>>>>> 821e3156414cc1966f77ea9bc7d3bb4df24b9a50
         </Container>
     )
 }
