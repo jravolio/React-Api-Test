@@ -2,6 +2,7 @@ import { GlobalStyle } from './styles/App';
 import { Home } from './components/Home/index'
 
 export function App() {
+
   return (
     <>
       <GlobalStyle/>

@@ -88,4 +88,61 @@ export const Container = styled.div`
     }
 }
 
+
+.pagination{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+
+        padding: 1rem;
+        margin-top: 0.5rem;
+
+        flex-wrap: wrap;
+
+        background-color: #312921;
+        opacity: 0.9;
+    }
+    
+    .page-item{
+
+        cursor: pointer;
+
+        padding: 0.5rem;
+        border-radius: 16px;
+
+        color: #f2f2f2;
+
+        margin-bottom: 1rem;
+
+        border: 1px solid #d7d7d7;
+
+        background-color: #312921;
+        
+        & + .page-item{
+            margin-left: 1rem;
+        }
+
+        &.active{
+            background-color: #0093E9;
+        }
+
+        &.disabled{
+            opacity: 0.5;
+        }
+
+        &.disabled:hover{
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+
+    .break{
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+            color: #f2f2f2;
+            cursor: pointer;
+            
+        }
+
 `
