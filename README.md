@@ -7,12 +7,12 @@
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 </div>
 
-<img align='right' width="380" height="400" src="./src/assets/homepage.png" />
 
 ## -  Objective 🛠️
 the objective of this React project is to understand how to use React to get responses from apis using axios.
 
 
+<img align='right' width="380" height="400" src="./src/assets/homepage.png" />
 
 
 ## - Technologies 🚀️
