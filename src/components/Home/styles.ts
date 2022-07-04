@@ -13,24 +13,21 @@ export const Container = styled.div`
 }
 
 .card li{
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 5px );
-    -webkit-backdrop-filter: blur( 5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     
     padding: 3.625rem 1rem;
+    margin: 1.5rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     text-align: center;
-
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    color: #f2f2f2;
 }
 
 .card h2{
@@ -51,8 +48,6 @@ export const Container = styled.div`
     width: auto;
     margin-top: 2.5rem;
     font-size: 1.5rem;
-
-    text-shadow: 0.5px 0.5px black;
 
     h3.Alive{
         color: #34A300;
@@ -99,7 +94,7 @@ export const Container = styled.div`
 
         flex-wrap: wrap;
 
-        background-color: #312921;
+        background-color: #131518;
         opacity: 0.9;
     }
     
