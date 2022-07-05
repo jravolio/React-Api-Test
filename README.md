@@ -39,4 +39,5 @@ and the site should be functioning! :)
 ```
 ⬜ Put the site online
 ⬜️ Check details of each character
+⬜️ Add Loading
 ```
