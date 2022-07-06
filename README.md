@@ -37,7 +37,7 @@ and the site should be functioning! :)
 
 ## - Future updates ⚡
 ```
+✅ Add Loading
 ⬜ Put the site online
 ⬜️ Check details of each character
-⬜️ Add Loading
 ```

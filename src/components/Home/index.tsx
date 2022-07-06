@@ -2,6 +2,7 @@ import { Container } from "./styles"
 import { useEffect, useState } from "react";
 import { api } from '../../services/api'
 import ReactPaginate from "react-paginate";
+import { LoadingSpinner } from '../LoadingSpinner'
 
 interface UserProps{
     name: string;
@@ -15,24 +16,21 @@ export function Home(){
 
 const [characters, setCharacters] = useState<UserProps[]>([]);
 
-useEffect(() => {
-  api
-    .get("/character/?page=1")
-    .then((response) => setCharacters(response.data.results))
-    .catch((err) => {
-      console.error("ops! ocorreu um erro" + err);
-    });
+const [isLoading, setIsLoading] = useState(false)
 
-    
+useEffect(() => {
+    getCharacters(1)
 }, []);
 
 const getCharacters = async (currentPage: number) =>{
+    setIsLoading(true)
     await api
         .get(`/character/?page=${currentPage}`)
         .then((response) => setCharacters(response.data.results))
         .catch((err) => {
           console.error("ops! ocorreu um erro" + err);
         });
+    setIsLoading(false)
 }  
 
 const handlePageClick = async (data: { selected: any; }) =>{
@@ -44,23 +42,29 @@ const handlePageClick = async (data: { selected: any; }) =>{
   }
 
 
+  const renderUser = (
+    <ul className='card'>
+    {characters.map(character => {
+        return (
+                <li key={character.id}>
+                    <h1>{character.name}</h1>
+                    <h2>{character.species}</h2>
+                    <img src={character.image} alt={character.name} />
+                    <div className="status">
+                        <span className={"dot " + character.status}></span>
+                        <h3 className={character.status}>{character.status}</h3>
+                    </div>
+                </li>
+        )
+    })}
+    </ul>
+  )
+
     return(
         <Container>
-            <ul className='card'>
-                {characters.map(character => {
-                    return (
-                            <li key={character.id}>
-                                <h1>{character.name}</h1>
-                                <h2>{character.species}</h2>
-                                <img src={character.image} alt={character.name} />
-                                <div className="status">
-                                    <span className={"dot " + character.status}></span>
-                                    <h3 className={character.status}>{character.status}</h3>
-                                </div>
-                            </li>
-                    )
-                })}
-                </ul>
+
+                {isLoading ? <LoadingSpinner /> : renderUser}
+
                 <ReactPaginate
                     previousLabel={'previous'}
                     nextLabel={'next'}
