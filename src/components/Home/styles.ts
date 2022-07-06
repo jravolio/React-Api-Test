@@ -102,7 +102,6 @@ export const Container = styled.div`
 
         cursor: pointer;
 
-        padding: 0.5rem;
         border-radius: 16px;
 
         color: #f2f2f2;
@@ -131,13 +130,16 @@ export const Container = styled.div`
         }
     }
 
+    .page-link{
+        padding: 1rem;
+    }
+    
     .break{
-            margin-left: 1rem;
-            margin-right: 1rem;
-            margin-top: 0.3rem;
-            color: #f2f2f2;
-            cursor: pointer;
-            
-        }
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 0.3rem;
+        color: #f2f2f2;
+        cursor: pointer;    
+    }
 
 `
