@@ -8,12 +8,15 @@
 </div>
 
 
+
 ## -  Objective 🛠️
 the objective of this React project is to understand how to use React to get responses from apis using axios.
 
 
 <img align='right' width="380" height="400" src="./src/assets/homepage.png" />
 
+## - Visit the site
+The site is finally online! you can visit it [here](https://rickapireact.netlify.app/)! If you have any problem please contact me! ✉️
 
 ## - Technologies 🚀️
 On this project i used React to build the app and axios to consume the api. The api is and Rick and Morty api, you can check the api [here](https://rickandmortyapi.com/)
@@ -38,6 +41,6 @@ and the site should be functioning! :)
 ## - Future updates ⚡
 ```
 ✅ Add Loading
-⬜ Put the site online
+✅ Put the site online
 ⬜️ Check details of each character
 ```
