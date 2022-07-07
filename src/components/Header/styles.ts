@@ -30,6 +30,7 @@ export const Container = styled.div`
         
         .links{
             margin-top: 2.9rem;
+            margin-right: 1rem;
             display: flex;
             width: 38%;
             justify-content: space-between;
@@ -54,13 +55,20 @@ export const Container = styled.div`
             position: relative;
         }
     } 
+
+
     @media (max-width: 425px) {
         .header{
             width: 27rem;
-            
+        }
+    }
+
+    @media (min-width: 925px){
+        .header{
             .links{
-                margin-right: 1rem;
+                margin-right: 5rem;
             }
         }
     }
+
 `

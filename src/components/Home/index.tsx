@@ -62,7 +62,7 @@ const handlePageClick = async (data: { selected: any; }) =>{
 
     return(
         <Container>
-
+            
                 {isLoading ? <LoadingSpinner /> : renderUser}
 
                 <ReactPaginate

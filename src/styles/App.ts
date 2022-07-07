@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+
     *{
         margin: 0;
         padding: 0;
@@ -9,14 +10,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .App{
-        position: absolute;
         background-color:rgb(32, 35, 41);
     }
 
-    @media (min-width: 400px) {
+    @media (max-width: 425px) {
         .App{
-            width: 100%;
+            width: 27rem;
         }
-    }
-
+}
 `
