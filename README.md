@@ -13,7 +13,7 @@
 the objective of this React project is to understand how to use React to get responses from apis using axios.
 
 
-<img align='right' width="380" height="400" src="./src/assets/homepage.png" />
+<img align='right' width="430" height="400" src="./src/assets/homepage.png" />
 
 ## - Visit the site
 The site is finally online! you can visit it [here](https://rickapireact.netlify.app/)! If you have any problem please contact me! ✉️
