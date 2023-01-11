@@ -5,7 +5,6 @@ import linkedinImg from "/assets/linkedin.svg";
 import portfolioImg from "/assets/portfolio.svg";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
