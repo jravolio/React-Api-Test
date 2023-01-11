@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: rgb(32, 35, 41);
+}
+
+
+.status {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.5rem;
+
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+
+  .Alive {
+    color: #34a300;
+  }
+
+  .Dead {
+    color: #ee6352;
+  }
+
+  .unknown {
+    color: #fbd188;
+  }
+
+  .dot {
+    height: 23px;
+    width: 23px;
+    margin-right: 1rem;
+    border-radius:50%;
+    background-color: #fff;
+   
+
+    &.Alive {
+      background-color: #34a300;
+      -webkit-animation: glowing 1s ease-in-out infinite alternate;
+      -moz-animation: glowing 1s ease-in-out infinite alternate;
+      animation: glowing 1s ease-in-out infinite alternate;
+  
+    @keyframes glowing {
+      from {
+        box-shadow: 0 0 10px #34a300, 0 0 20px #41ca01, 0 0 30px #34a300, 0 0 40px #4eba1c, 0 0 50px #77f53d, 0 0 60px #34a300, 0 0 70px #34a300;
+      }
+      to {
+        box-shadow: 0 0 20px #6bff26, 0 0 30px #abf987, 0 0 40px #9bee75, 0 0 50px #51ff00, 0 0 60px #afff8a, 0 0 70px #34a300, 0 0 80px #34a300;
+      }
+    }
+    }
+
+    &.Dead {
+      background-color: #ee6352;
+      -webkit-animation: glowingDead 2s ease-in-out infinite alternate;
+      -moz-animation: glowingDead 3s ease-in-out infinite alternate;
+      animation: glowingDead 1s ease-in-out infinite alternate;
+  
+    @keyframes glowingDead {
+      from {
+        box-shadow: 0 0 10px #f29d91, 0 0 20px #fb3218, 0 0 30px #ee6352, 0 0 40px #f9aca2, 0 0 50px #fa2205, 0 0 60px #831304, 0 0 70px #bd2410;
+      }
+      to {
+        box-shadow: 0 0 20px #e97c6e, 0 0 30px #ee6352, 0 0 40px #7f2c21, 0 0 50px #ee6352, 0 0 60px #ee6352, 0 0 70px #ee6352, 0 0 80px #ee6352;
+      }
+    }
+    }
+
+    &.unknown {
+      background-color: #fbd188;
+      -webkit-animation: glowingUnknown 1s ease-in-out infinite alternate;
+      -moz-animation: glowingUnknown 1s ease-in-out infinite alternate;
+      animation: glowingUnknown 1s ease-in-out infinite alternate;
+
+      @keyframes glowingUnknown {
+        from {
+          box-shadow: 0 0 10px #cd8b19, 0 0 20px #efae3e, 0 0 30px #fbd188, 0 0 40px #fde3b6, 0 0 50px #d5cec2, 0 0 60px #e8b154, 0 0 70px #fbd188;
+        }
+        to {
+          box-shadow: 0 0 20px #927543, 0 0 30px #e79c1b, 0 0 40px #fbd188, 0 0 50px #fbd188, 0 0 60px #fbd188, 0 0 70px #fbd188, 0 0 80px #fbd188;
+        }
+      }
+    }
+  }
+}

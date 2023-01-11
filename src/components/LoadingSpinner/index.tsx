@@ -1,13 +1,9 @@
-import { Container } from "./styles";
+import styles from "./styles.module.scss";
 
-
-export function LoadingSpinner(){
-
-    return(
-        <Container>
-            <div className="spinner-container">
-                <div className="loading-spinner"></div>
-            </div>
-        </Container>
-    )
+export function LoadingSpinner() {
+  return (
+    <div className={styles.spinnerContainer}>
+      <div className={styles.loadingSpinner}></div>
+    </div>
+  );
 }

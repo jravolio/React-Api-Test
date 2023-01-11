@@ -1,4 +1,4 @@
-import { GlobalStyle } from './styles/App';
+import './styles/styles.scss';
 import { Home } from './components/Home/index'
 import { Header } from './components/Header';
 
@@ -6,11 +6,7 @@ export function App() {
 
   return (
     <>
-      <GlobalStyle/>
-      <Header/>
-      <div className="App">
         <Home/>
-      </div>
     </>
   );
 }
