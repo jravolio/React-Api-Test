@@ -5,11 +5,11 @@ import { LoadingSpinner } from "../LoadingSpinner";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { Header } from "../Header";
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 import { Fade } from "react-awesome-reveal";
-
-interface UserProps {
+import { Character } from "../Character";
+interface CharacterProps {
   name: string;
   id: number;
   species: string;
@@ -18,9 +18,11 @@ interface UserProps {
 }
 
 export function Home() {
-  const [characters, setCharacters] = useState<UserProps[]>([]);
+  const [characters, setCharacters] = useState<CharacterProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [pages, setPages] = useState(1);
+  const [characterDetailsIsActive, setCharacterDetailsIsActive] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps[]>([]);
 
   useEffect(() => {
     getCharacters(1);
@@ -40,6 +42,20 @@ export function Home() {
     setIsLoading(false);
   };
 
+  const handleCharacter = async (idChar: number) => {
+    setIsLoading(true);
+    await api
+      .get(`/character/${idChar}`)
+      .then((response: any) => {
+        setSelectedCharacter(response.data);
+        setCharacterDetailsIsActive(true);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+    setIsLoading(false);
+  };
+
   const handleChange = async (
     event: React.ChangeEvent<unknown>,
     value: number
@@ -52,12 +68,21 @@ export function Home() {
       {characters.map((character) => {
         return (
           <Fade key={character.id}>
-            <Card key={character.id} className={styles.cardContent}>
+            <Card
+              key={character.id}
+              className={styles.cardContent}
+              onClick={() => handleCharacter(character.id)}
+            >
               <h1>{character.name}</h1>
               <h2>{character.species}</h2>
-              <CardMedia component='img' image={character.image} alt={character.name} className={styles.cardMedia}/>
-              <div className='status'>
-                <div className={'dot ' + character.status}></div> 
+              <CardMedia
+                component="img"
+                image={character.image}
+                alt={character.name}
+                className={styles.cardMedia}
+              />
+              <div className="status">
+                <div className={"dot " + character.status}></div>
                 <h3 className={character.status}>{character.status}</h3>
               </div>
             </Card>
@@ -69,21 +94,23 @@ export function Home() {
 
   return (
     <>
-    
-      <header>
-        <Header />
-      </header>
-
-      {isLoading ? <LoadingSpinner /> : renderUser}
-
-      <Stack spacing={2}>
-        <Pagination
-          className={styles.pagination}
-          count={pages}
-          color="secondary"
-          onChange={handleChange}
-        />
-      </Stack>
+    <header>
+      <Header />
+    </header>
+      {characterDetailsIsActive ? (
+        <Character selectedCharacter={selectedCharacter} />) : (
+        <>
+          {isLoading ? <LoadingSpinner /> : renderUser}
+          <Stack spacing={2}>
+            <Pagination
+              className={styles.pagination}
+              count={pages}
+              color="secondary"
+              onChange={handleChange}
+            />
+          </Stack>
+        </>
+      )}
     </>
   );
 }

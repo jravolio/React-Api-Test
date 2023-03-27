@@ -21,7 +21,9 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    
+
+    cursor: pointer;
+
     background: linear-gradient(to top, #000,rgba(0, 0, 0, 0.072) ,rgba(0,0,0,0));
     color: white;
 
