@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    color: #f2f2f2;
+
+    margin-top: 3rem;
+
+    .mainInfo{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+    }
+
+    .charInfo{
+        text-align: right;
+        display: flex;
+
+        width: 97vw;
+        justify-content: flex-end;
+    }
+    
+}
